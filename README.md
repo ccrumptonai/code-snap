@@ -4,7 +4,7 @@ Turn a code snippet into a **beautiful, shareable image** — syntax highlightin
 color themes, window chrome, gradient backgrounds. Export as PNG or copy
 straight to your clipboard. **100% in the browser, no backend, nothing uploaded.**
 
-<!-- TODO: add a demo GIF here, e.g. ![demo](docs/demo.gif) -->
+![Code Snap — code turned into a styled, shareable image with the Dracula theme](docs/demo.png)
 
 ## ✨ Features
 
