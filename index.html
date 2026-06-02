@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Code Snap</title>
+  <meta name="description" content="Turn code into a beautiful shareable image. Themes, window chrome, syntax highlighting. Browser-only, no backend." />
+  <link id="hljs-theme" rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/styles/dracula.min.css" />
+  <link rel="stylesheet" href="css/app.css" />
+</head>
+<body>
+  <aside class="sidebar">
+    <h1 class="brand">📸 Code Snap</h1>
+
+    <label class="field">Language
+      <select id="lang"></select>
+    </label>
+
+    <label class="field">Theme
+      <select id="theme"></select>
+    </label>
+
+    <label class="field">Background
+      <select id="bg">
+        <option value="linear-gradient(135deg,#667eea,#764ba2)">Purple haze</option>
+        <option value="linear-gradient(135deg,#f093fb,#f5576c)">Sunset</option>
+        <option value="linear-gradient(135deg,#4facfe,#00f2fe)">Ocean</option>
+        <option value="linear-gradient(135deg,#43e97b,#38f9d7)">Mint</option>
+        <option value="#1e1e24">Charcoal</option>
+        <option value="#ffffff">White</option>
+        <option value="transparent">Transparent</option>
+      </select>
+    </label>
+
+    <label class="field">Padding <span id="pad-val" class="val">64px</span>
+      <input id="pad" type="range" min="0" max="128" value="64" step="8" />
+    </label>
+
+    <label class="check"><input id="chrome" type="checkbox" checked /> Window chrome</label>
+    <label class="check"><input id="lines" type="checkbox" /> Line numbers</label>
+    <label class="check"><input id="mark" type="checkbox" /> Watermark</label>
+
+    <div class="field">Title bar text
+      <input id="title-text" type="text" value="snippet.js" />
+    </div>
+
+    <div class="export">
+      <button id="btn-png" class="btn">⬇ Download PNG</button>
+      <button id="btn-copy" class="btn btn-ghost">⧉ Copy image</button>
+      <div id="status" class="status"></div>
+    </div>
+  </aside>
+
+  <main class="stage">
+    <div id="frame" class="frame">
+      <div id="window" class="window">
+        <div id="titlebar" class="titlebar">
+          <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+          <span id="title-label" class="title-label">snippet.js</span>
+        </div>
+        <div class="editor-wrap">
+          <div id="gutter" class="gutter" hidden></div>
+          <pre class="code-layer"><code id="code-hl" class="hljs"></code></pre>
+          <textarea id="code-input" spellcheck="false"></textarea>
+        </div>
+        <div id="watermark" class="watermark" hidden>Code Snap</div>
+      </div>
+    </div>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/highlight.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/html-to-image@1.11.11/dist/html-to-image.js"></script>
+  <script src="js/syntax.js"></script>
+  <script src="js/render.js"></script>
+  <script src="js/export.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
