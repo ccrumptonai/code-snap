@@ -77,7 +77,10 @@ input[type="range"] { width: 100%; accent-color: var(--accent); }
   letter-spacing: normal;
 }
 .code-layer { overflow: visible; }
-.code-layer code.hljs { background: transparent !important; padding: 0; display: block; }
+/* font: inherit ensures the <code> uses the same stack as the textarea,
+   overriding the UA `code { font-family: monospace }` rule so the
+   transparent textarea and highlighted layer stay pixel-aligned. */
+.code-layer code.hljs { background: transparent !important; padding: 0; display: block; font: inherit; }
 #code-input {
   position: absolute; inset: 0;
   width: 100%; height: 100%;

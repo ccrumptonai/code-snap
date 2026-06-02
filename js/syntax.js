@@ -6,7 +6,7 @@
 
   // theme key -> [highlight.js stylesheet name, window background, gutter/title color]
   const THEMES = {
-    "Dracula":        ["dracula",               "#282a36"],
+    "Dracula":        ["base16/dracula",        "#282a36"],
     "GitHub Dark":    ["github-dark",           "#0d1117"],
     "Nord":           ["nord",                  "#2e3440"],
     "One Dark":       ["atom-one-dark",         "#282c34"],
